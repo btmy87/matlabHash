@@ -2,7 +2,9 @@
 % unit tests for hashFile
 % runtests('test_hashFile')
 
+try %#ok<TRYNC>
 dotnetenv("core");
+end
 
 %% Test 1: Default, SHA256
 expectedValue = "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e";
