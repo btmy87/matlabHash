@@ -22,7 +22,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-14]
         include:
           - os: windows-latest
-            version: 2023b
+            version: R2023b
           - os: windows-latest
             version: R2022b
       fail-fast: false
