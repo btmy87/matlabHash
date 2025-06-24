@@ -47,4 +47,5 @@ jobs:
         uses: matlab-actions/run-tests@v2
         with:
           test-results-junit: results.xml
+          use-parallel: false
 
