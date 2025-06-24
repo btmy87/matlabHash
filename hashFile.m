@@ -16,6 +16,12 @@ arguments (Input)
     opts.hashAlgorithm = "SHA256";
 end
 
+persistent setup_once;
+if isempty(setup_once)
+    setup_once = true;
+    NET.addAssembly("System.Security.Cryptography");
+end
+
 assert(exist(filename, "file") > 0, "file does not exist" + filename)
 
 fid = fopen(filename, "rb");
