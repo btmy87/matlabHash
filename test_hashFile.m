@@ -1,7 +1,9 @@
 % test_hashFile
 % unit tests for hashFile
 % runtests('test_hashFile')
-dotnetenv("core")
+dotnetenv("core");
+NET.addAssembly("System.Security.Cryptography");
+dotnetenv
 
 %% Test 1: Default, SHA256
 expectedValue = "436a6d536138f203ac333858cff92a568be62797752b3adb94bcaa0f6ffe7ef6";
