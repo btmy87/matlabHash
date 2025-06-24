@@ -18,19 +18,20 @@ jobs:
   test:
     strategy:
       matrix:
-        version: [R2025a, R2024b, R2022b]
+        version: [R2025a, R2024b, R2023b, R2022b]
         os: [ubuntu-latest, windows-latest]
+        include:
+          - os: macos-14
+            version: R2025a
+          - os: macos-14
+            version: R2024b
+          - os: macos-14
+            version: R2023b
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-        # make sure dotnet is available on linux
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 9.x
 
       - name: Set up products
         uses: matlab-actions/setup-matlab@v2
